@@ -1,51 +1,59 @@
-<p>update-form works!</p>
-<div class="container d-flex justify-content-center align-items-center h-100 p-5">
-    <div class="row g-3">
-        <div class="col-md-6">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" [(ngModel)]="employeeObj.name" class="form-control" id="name">
-        </div>
-        <div class="col-md-6">
-          <label for="salary" class="form-label">Salary</label>
-          <input type="number" [(ngModel)]="employeeObj.salary" class="form-control" id="salary">
-        </div>
-        <div class="col-12">
-          <label class="form-label">Gender</label>
-          <div class="form-check">
-            <input class="form-check-input" [(ngModel)]="employeeObj.gender" type="radio" name="gender" id="male" value="Male">
-            <label class="form-check-label" for="male">Male</label>
+<div class="my-container">
+    
+  <div class="container d-flex col-12 justify-content-between">
+      <h1 class="heading">Update Employee</h1>
+      <div>
+          <button class="btn" (click)="homePage()">❌</button>
+      </div>
+  </div>
+
+  <div class="container d-flex justify-content-center align-items-center bg-light inner-container">
+      <div class="row g-3">
+          <div class="col-md-6">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" [(ngModel)]="employeeObj.name" class="form-control" id="name">
           </div>
-          <div class="form-check">
-            <input class="form-check-input" [(ngModel)]="employeeObj.gender" type="radio" name="gender" id="female" value="Female">
-            <label class="form-check-label" for="female">Female</label>
+          <div class="col-md-6">
+              <label for="salary" class="form-label">Salary</label>
+              <input type="number" [(ngModel)]="employeeObj.salary" class="form-control" id="salary">
           </div>
-        </div>
-        <div class="col-12">
-          <label for="startDate" class="form-label">Start Date</label>
-          <input type="date" [(ngModel)]="employeeObj.startDate" class="form-control" id="startDate">
-        </div>
-        <div class="col-md-6">
-          <label for="note" class="form-label">Note</label>
-          <input type="text" [(ngModel)]="employeeObj.note" class="form-control" id="note">
-        </div>
-        <div class="col-md-4">
-          <label for="profilePic" class="form-label">Profile Photo</label>
-          <input type="text" [(ngModel)]="employeeObj.profilePic" class="form-control" id="profilePic">
-        </div>
-        <div class="col-md-2">
-          <label for="department" class="form-label">Department</label>
-          <select class="form-control" id="department" [(ngModel)]="employeeObj.department" required>
-            <option value="">Select Department</option>
-            <option value="IT">IT</option>
-            <option value="HR">HR</option>
-            <option value="Finance">Finance</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <button (click)="saveEmp()" class="btn btn-primary">Save</button>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-danger" (click)="homePage()">Back</button>
-        </div>
-    </div>
+          <div class="col-12 d-flex justify-content-space-between">
+              <div class="form-check p-3">
+                  <input class="form-check-input" [(ngModel)]="employeeObj.gender" type="radio" name="gender" id="male" value="Male">
+                  <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check p-3">
+                  <input class="form-check-input" [(ngModel)]="employeeObj.gender" type="radio" name="gender" id="female" value="Female">
+                  <label class="form-check-label" for="female">Female</label>
+              </div>
+          </div>
+          <div class="col-12">
+              <label for="startDate" class="form-label">Start Date</label>
+              <input type="date" [(ngModel)]="employeeObj.startDate" class="form-control" id="startDate">
+          </div>
+          <div class="col-md-6">
+              <label for="note" class="form-label">Note</label>
+              <input type="text" [(ngModel)]="employeeObj.note" class="form-control" id="note">
+          </div>
+          <div class="col-md-4">
+              <label for="profilePic" class="form-label">Profile Photo URL</label>
+              <input type="text" [(ngModel)]="employeeObj.profilePic" class="form-control" id="profilePic">
+          </div>
+          <div class="col-md-2">
+              <label for="department" class="form-label">Department</label>
+              <select class="custom-select form-control" id="department" name="department" [(ngModel)]="employeeObj.department" required>
+                  <option value="">Select Department</option>
+                  <option value="IT">IT</option>
+                  <option value="HR">HR</option>
+                  <option value="Finance">Finance</option>
+              </select>
+          </div>
+          <div class="col-12 d-flex">
+              <div class="col-1">
+                  <button (click)="saveEmp()" class="btn btn-primary">Update</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
 </div>
