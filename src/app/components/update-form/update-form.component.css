@@ -1,0 +1,21 @@
+
+
+.inner-container{
+
+    padding: 50px;
+    border-radius:50px; 
+    box-shadow: black 2px 2px 5px 1px;
+
+}
+.heading{
+    font-size: 30px;
+    margin: 15px;
+    color: rgb(58, 58, 58);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
