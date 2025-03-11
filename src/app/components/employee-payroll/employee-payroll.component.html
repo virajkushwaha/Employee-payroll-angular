@@ -1,0 +1,46 @@
+<div class="container p-2">
+  <h2>Get Api</h2>
+<button class="btn btn-success" (click)="addEmployee()">+ Add</button>
+<div class="container p-5" >
+    
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>SNo</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>Start Date</th>
+            <th>Note</th>
+            <th>Profile Picture</th>
+            <th>Department</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (employee of employeeList;track $index ){
+          <tr>
+            <td>{{ $index +1 }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.salary}}</td>
+            <td>{{ employee.gender || 'Not Provided' }}</td>
+            <td>{{ employee.startDate || 'Not Provided' }}</td>
+            <td>{{ employee.note || 'Not Provided' }}</td>
+            <td>
+              <img *ngIf="employee.profilePic" [src]="employee.profilePic" alt="Profile Pic" width="50" />
+              <img *ngIf="!employee.profilePic" [src] = "this.noImageUrl" alt="No pic" width="50">
+            </td>
+            <td>{{ employee.department }}</td>
+            <td>
+              <button class="btn btn-warning m-2" (click)="updateEmployee(employee.id)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>
+              
+            </td>
+          </tr>
+        }
+        </tbody>
+      </table>
+      
+</div>
+
+</div>
